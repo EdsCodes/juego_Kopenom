@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>KOPENOM!</title>
+       
+    </head>
+    <body>
+        <h1>KOPENOM!</h1>
+        <section id="seleccionar-mascota">
+            <h2>Elige tu mascota:</h2>
+
+            <label for="Firekick">Firekick</label>
+            <input type="radio" name="mascota" id="Firekick"/>
+
+            <label for="Waterhit">Waterhit</label>
+            <input type="radio" name="mascota" id="Waterhit"/>
+            
+            <label for="Earthpunch">Earthpunch</label>
+            <input type="radio" name="mascota" id="Earthpunch"/>
+
+            <button id="boton-mascota">Seleccionar mascota</button>
+        </section>
+
+        <section id="seleccionar-ataque">
+            <h2>Elige tu ataque:</h2>
+
+            <p>Tu mascota tiene <span>3</span> vidas</p>
+            <p>La mascota del enemigo tiene <span>3</span> vidas</p>
+
+            <p>
+                <button id="boton-fuego">fuego</button>
+                <button id="boton-agua">agua</button>
+                <button id="boton-tierra">tierra</button>
+            </p>
+        </section>
+        <section id="mensajes">
+            <p>Tu mascota atacó con FUEGO, la mascota de tu enemigo ataco con TIERRA - GANASTE</p>
+        </section>
+        <section id="reiniciar">
+            <button id="boton-reiniciar">Reiniciar</button>
+        </section>
+        <script src="./js/kopenom.js"></script>
+    </body>
+</html>
