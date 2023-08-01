@@ -1,5 +1,5 @@
-let ataqueJugador = ''
-
+let ataqueJugador
+let ataqueEnemigo
 
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -45,7 +45,7 @@ function iniciarJuego(){
             let mascotaAleatorio = aleatorio(1,3)
             let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
-            if (MascotaAleatorio == 1){
+            if (mascotaAleatorio == 1){
                    spanMascotaEnemigo.innerHTML = "Firekick"
                } else if (mascotaAleatorio == 2){
                spanMascotaEnemigo.innerHTML = "Waterhit" 
@@ -53,5 +53,7 @@ function iniciarJuego(){
                 spanMascotaEnemigo.innerHTML = "Earthpunch"
             }
     }
-       
-window.addEventListener('load', iniciarJuego)
+    
+    import { ataqueFuego, ataqueAgua, ataqueTierra, AtaqueAleatorioEnemigo } from './combate_kopenom'
+        
+window.addEventListener('load', iniciarJuego) 
