@@ -59,7 +59,7 @@ function iniciarJuego(){
     
     //combate entre las dos mascotas 
 
-    function ataqueFuego(){{
+    function ataqueFuego() {
         ataqueJugador = 'fuego'
         ataqueAleatorioEnemigo()
     }
@@ -70,8 +70,6 @@ function iniciarJuego(){
     function ataqueTierra(){
         ataqueJugador = 'tierra'
         ataqueAleatorioEnemigo()
-    }
-    crearMensaje()
     }
         
     function ataqueAleatorioEnemigo() { 
@@ -84,7 +82,8 @@ function iniciarJuego(){
     } else {
         ataqueEnemigo = 'tierra';
     } 
-
+    crearMensaje()
+}
 
     function crearMensaje (){
         let sectionMensajes = document.getElementById('Mensajes')
@@ -93,6 +92,7 @@ function iniciarJuego(){
         
         sectionMensajes.appenchild(parrafo)
     } 
-} 
+
+    
         
 window.addEventListener('load', iniciarJuego) 
