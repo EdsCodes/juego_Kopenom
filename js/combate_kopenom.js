@@ -7,11 +7,11 @@ function iniciarJuego(){
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
     let botonFuego = document.getElementById('boton-fuego')
-    botonFuego.addEventListener('click', ataqueFuego)
+    botonFuego.addEventListener('click', ataqueFuego())
     let botonAgua = document.getElementById('boton-Agua')
-    botonAgua.addEventListener('click', ataqueAgua)
+    botonAgua.addEventListener('click', ataqueAgua())
     let botonTierra = document.getElementById('boton-tierra')
-    botonTierra.addEventListener('click', ataqueTierra)
+    botonTierra.addEventListener('click', ataqueTierra())
 
 }
 
@@ -71,27 +71,31 @@ function iniciarJuego(){
         ataqueAleatorioEnemigo()
     }
         
-    function ataqueAleatorioEnemigo() { 
+    function ataqueAleatorioEnemigo() {
         let ataqueAleatorio = aleatorio(1,3)
-
-    if (ataqueAleatorio == 1) {
-        ataqueEnemigo = 'fuego';
-    } else if (ataqueAleatorio == 2) {
-        ataqueEnemigo = 'agua';
-    } else {
-        ataqueEnemigo = 'tierra';
-    } 
-    crearMensaje()
-}
-
-    function crearMensaje (){
-        let sectionMensajes = document.getElementById('Mensajes')
-        let parrafo = document.createElement('p')
-        parrafo.innerHTML = 'tu mascota atacó con ' + ataqueJugador + ', la mascota de tu enemigo atacó con ' + ataqueEnemigo + '- (PERDISTE O GANASTE)'
         
-        sectionMensajes.appendchild(parrafo)
-    } 
-
+        if (ataqueAleatorio == 1) {
+            ataqueEnemigo = 'FUEGO'
+        } else if (ataqueAleatorio == 2) {
+            ataqueEnemigo = 'AGUA'
+        } else {
+            ataqueEnemigo = 'TIERRA'
+        }
     
+        crearMensaje()
+    }
+
+    function crearMensaje() {
+        let sectionMensajes = document.getElementById('mensajes')
         
-window.addEventListener('load', iniciarJuego) 
+        let parrafo = document.createElement('p')
+        parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '- PENDIENTE'
+    
+        sectionMensajes.appendChild(parrafo)
+    }
+    
+    function aleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+    
+    window.addEventListener('load', iniciarJuego)
