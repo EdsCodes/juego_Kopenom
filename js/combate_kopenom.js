@@ -22,7 +22,6 @@ function iniciarJuego(){
         let inputWaterhit = document.getElementById('Waterhit')
         let inputEarthpunch = document.getElementById('Earthpunch')
         let spanMascotaJugador = document.getElementById('mascota-jugador')
-    
 
         if (inputFirekick.checked){
                 spanMascotaJugador.innerHTML = 'Firekick'
@@ -73,7 +72,7 @@ function iniciarJuego(){
     }
         
     function ataqueAleatorioEnemigo() { 
-        let ataqueAleatorio = aleatorio(1,3);
+        let ataqueAleatorio = aleatorio(1,3)
 
     if (ataqueAleatorio == 1) {
         ataqueEnemigo = 'fuego';
@@ -90,7 +89,7 @@ function iniciarJuego(){
         let parrafo = document.createElement('p')
         parrafo.innerHTML = 'tu mascota atacó con ' + ataqueJugador + ', la mascota de tu enemigo atacó con ' + ataqueEnemigo + '- (PERDISTE O GANASTE)'
         
-        sectionMensajes.appenchild(parrafo)
+        sectionMensajes.appendchild(parrafo)
     } 
 
     
