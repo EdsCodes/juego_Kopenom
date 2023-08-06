@@ -8,7 +8,7 @@ function iniciarJuego(){
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.addEventListener('click', ataqueFuego())
-    let botonAgua = document.getElementById('boton-Agua')
+    let botonAgua = document.getElementById('boton-agua')
     botonAgua.addEventListener('click', ataqueAgua())
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra())
@@ -75,11 +75,11 @@ function iniciarJuego(){
         let ataqueAleatorio = aleatorio(1,3)
         
         if (ataqueAleatorio == 1) {
-            ataqueEnemigo = 'FUEGO'
+            ataqueEnemigo = 'fuego'
         } else if (ataqueAleatorio == 2) {
-            ataqueEnemigo = 'AGUA'
+            ataqueEnemigo = 'agua'
         } else {
-            ataqueEnemigo = 'TIERRA'
+            ataqueEnemigo = 'tierra'
         }
     
         crearMensaje()
