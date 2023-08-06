@@ -23,13 +23,13 @@ function iniciarJuego(){
         let inputEarthpunch = document.getElementById('Earthpunch')
         let spanMascotaJugador = document.getElementById('mascota-jugador')
 
-        if (inputFirekick.checked){
+        if (inputFirekick.checked) {
                 spanMascotaJugador.innerHTML = 'Firekick'
                 alert("Seleccionaste a Firekick")
-            }else if (inputWaterhit.checked){
+            }else if (inputWaterhit.checked) {
                 spanMascotaJugador.innerHTML = 'Waterhit'
                 alert("Seleccionaste a Waterhit")
-            }else if (inputEarthpunch.checked){
+            }else if (inputEarthpunch.checked) {
                 spanMascotaJugador.innerHTML = 'Earthpunch'
                 alert("Seleccionaste a Earthpunch")
             }else {
@@ -39,20 +39,16 @@ function iniciarJuego(){
             seleccionarMascotaEnemigo()
      }
 
-        function aleatorio(min, max){
-            return Math.floor(Math.random() * (max-min+1) + min)
-        }
+    function seleccionarMascotaEnemigo(){
+        let mascotaAleatorio = aleatorio(1,3)
+        let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
 
-        function seleccionarMascotaEnemigo(){
-            let mascotaAleatorio = aleatorio(1,3)
-            let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
-
-            if (mascotaAleatorio == 1){
-                   spanMascotaEnemigo.innerHTML = "Firekick"
-               } else if (mascotaAleatorio == 2){
+        if (mascotaAleatorio == 1){
+               spanMascotaEnemigo.innerHTML = "Firekick"
+            } else if (mascotaAleatorio == 2){
                spanMascotaEnemigo.innerHTML = "Waterhit" 
-                } else {
-                spanMascotaEnemigo.innerHTML = "Earthpunch"
+            } else {
+               spanMascotaEnemigo.innerHTML = "Earthpunch"
             }
     }
     
