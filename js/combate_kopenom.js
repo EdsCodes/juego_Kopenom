@@ -7,11 +7,11 @@ function iniciarJuego(){
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
     let botonFuego = document.getElementById('boton-fuego')
-    botonFuego.addEventListener('click', ataqueFuego())
+    botonFuego.addEventListener('click', ataqueFuego)
     let botonAgua = document.getElementById('boton-agua')
-    botonAgua.addEventListener('click', ataqueAgua())
+    botonAgua.addEventListener('click', ataqueAgua)
     let botonTierra = document.getElementById('boton-tierra')
-    botonTierra.addEventListener('click', ataqueTierra())
+    botonTierra.addEventListener('click', ataqueTierra)
 
 }
 
@@ -52,7 +52,7 @@ function iniciarJuego(){
             }
     }
     
-    //combate entre las dos mascotas 
+//combate entre las dos mascotas 
 
     function ataqueFuego() {
         ataqueJugador = 'fuego'
@@ -78,14 +78,28 @@ function iniciarJuego(){
             ataqueEnemigo = 'tierra'
         }
     
-        crearMensaje()
+        combate()
     }
 
-    function crearMensaje() {
+// resultado de combate
+function combate () {
+    if(ataqueEnemigo == ataqueJugador) {
+        crearMensaje ("Empate")
+    } else if((ataqueJugador == 'fuego' && ataqueEnemigo == 'tierra') || (ataqueJugador == 'agua' && ataqueEnemigo == "fuego") || (ataqueJugador == 'tierra' && ataqueEnemigo == 'agua')){
+        crearMensaje ("Ganaste")
+    } else {
+        crearMensaje
+        //alert("Perdiste")
+    }
+    }
+
+
+//mensajes de combate
+    function crearMensaje(resultado) {
         let sectionMensajes = document.getElementById('mensajes')
         
         let parrafo = document.createElement('p')
-        parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '- PENDIENTE'
+        parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascota del enemigo atacó con ' + ataqueEnemigo + '. Resultado: ' + resultado
     
         sectionMensajes.appendChild(parrafo)
     }
@@ -93,5 +107,6 @@ function iniciarJuego(){
     function aleatorio(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
+
     
     window.addEventListener('load', iniciarJuego)
