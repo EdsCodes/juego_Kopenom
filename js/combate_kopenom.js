@@ -1,6 +1,8 @@
 //variables globales
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -82,15 +84,29 @@ function iniciarJuego(){
     }
 
 // resultado de combate
-function combate () {
+function combate () { 
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
     if(ataqueEnemigo == ataqueJugador) {
         crearMensaje ("Empate")
     } else if((ataqueJugador == 'fuego' && ataqueEnemigo == 'tierra') || (ataqueJugador == 'agua' && ataqueEnemigo == "fuego") || (ataqueJugador == 'tierra' && ataqueEnemigo == 'agua')){
         crearMensaje ("Ganaste")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
         crearMensaje
-        //alert("Perdiste")
+        //alert("Perdiste") 
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
     }
+        revisarVidas()
+    }
+
+    function revisarVidas() {
+        if (vidasJugador == 0){
+            crearMensajeFinal ('Felicitiones, cabar de convertirte e un maestra Kopenom :), GANASTE')
+        } else if (vidasEnemigo == 0)
+            //GANAMOS
     }
 
 
@@ -103,10 +119,19 @@ function combate () {
     
         sectionMensajes.appendChild(parrafo)
     }
+
+    function crearMensajeFinal(resultadoFinal) {
+        let sectionMensajes = document.getElementById('mensajes')
+        
+        let parrafo = document.createElement('p')
+        parrafo.innerHTML = ''
+    
+        sectionMensajes.appendChild(parrafo)
+    }
     
     function aleatorio(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
     
-    window.addEventListener('load', iniciarJuego)
+    window.addEventListener('load', iniciarJuego)            
