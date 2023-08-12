@@ -1,10 +1,16 @@
-//variables globales
+//Declaracion de variables globales
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
 function iniciarJuego(){
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none'
+
+    let sectionReiniciarJuego = document.getElementById('reiniciar')
+    sectionReiniciarJuego.style.display = 'none'
+
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
@@ -15,13 +21,19 @@ function iniciarJuego(){
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
 
-    let botoReiniciar = document.getElementById('boton-reiniciar')
-    botoReiniciar.addEventListener('click', reiniciarJuego)
+    let botonReiniciar = document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
-//seleccion de mascotas para jugador y aleatorio para pc
+//Seleccion de mascotas para jugador y aleatorio para pc
 
     function seleccionarMascotaJugador(){
+        let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+        sectionSeleccionarAtaque.style.display = 'block'  
+
+        let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+        sectionSeleccionarMascota.style.display = 'none'
+
         let inputFirekick = document.getElementById('Firekick')
         let inputWaterhit = document.getElementById('Waterhit')
         let inputEarthpunch = document.getElementById('Earthpunch')
@@ -56,8 +68,7 @@ function iniciarJuego(){
             }
     }
     
-//combate entre las dos mascotas 
-
+//Combate entre las dos mascotas 
     function ataqueFuego() {
         ataqueJugador = 'fuego'
         ataqueAleatorioEnemigo()
@@ -85,7 +96,8 @@ function iniciarJuego(){
         combate()
     }
 
-// resultado de combate
+
+//Resultado de combate
 function combate () { 
     let spanVidasJugador = document.getElementById('vidas-jugador')
     let spanVidasEnemigo = document.getElementById('vidas-enemigo')
@@ -96,8 +108,7 @@ function combate () {
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
-        crearMensaje
-        //alert("Perdiste") 
+        crearMensaje ("Perdiste")
         vidasJugador--
         spanVidasJugador.innerHTML = vidasJugador
     }
@@ -109,12 +120,12 @@ function combate () {
         if (vidasJugador == 0){
             crearMensajeFinal ('Esta vez no has ganado :(, pero puedes intentarlo de nuevo')
         } else if (vidasEnemigo == 0){
-            crearMensajeFinal ('Felicitaciones, acabas de convertirte e un maestro Kopenom :), GANASTE')
+            crearMensajeFinal ('Felicitaciones, acabas de convertirte en un maestro Kopenom :), GANASTE')
         }
     }
 
 
-//mensajes de combate
+//Mensajes de combate
     function crearMensaje(resultado) {
         let sectionMensajes = document.getElementById('mensajes')
         
@@ -138,6 +149,9 @@ function combate () {
         botonAgua.disabled = true
         let botonTierra = document.getElementById('boton-tierra')
         botonTierra.disabled = true
+
+        let sectionReiniciarJuego = document.getElementById('reiniciar')
+        sectionReiniciarJuego.style.display = 'block'
     }
 
     function reiniciarJuego(){
