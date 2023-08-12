@@ -15,6 +15,8 @@ function iniciarJuego(){
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
 
+    let botoReiniciar = document.getElementById('boton-reiniciar')
+    botoReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 //seleccion de mascotas para jugador y aleatorio para pc
@@ -99,14 +101,16 @@ function combate () {
         vidasJugador--
         spanVidasJugador.innerHTML = vidasJugador
     }
-        revisarVidas()
-    }
+    
+    revisarVidas()
+}
 
     function revisarVidas() {
         if (vidasJugador == 0){
-            crearMensajeFinal ('Felicitiones, cabar de convertirte e un maestra Kopenom :), GANASTE')
-        } else if (vidasEnemigo == 0)
-            //GANAMOS
+            crearMensajeFinal ('Esta vez no has ganado :(, pero puedes intentarlo de nuevo')
+        } else if (vidasEnemigo == 0){
+            crearMensajeFinal ('Felicitaciones, acabas de convertirte e un maestro Kopenom :), GANASTE')
+        }
     }
 
 
@@ -124,11 +128,22 @@ function combate () {
         let sectionMensajes = document.getElementById('mensajes')
         
         let parrafo = document.createElement('p')
-        parrafo.innerHTML = ''
+        parrafo.innerHTML = resultadoFinal
     
         sectionMensajes.appendChild(parrafo)
+
+        let botonFuego = document.getElementById('boton-fuego')
+        botonFuego.disabled = true
+        let botonAgua = document.getElementById('boton-agua')
+        botonAgua.disabled = true
+        let botonTierra = document.getElementById('boton-tierra')
+        botonTierra.disabled = true
     }
-    
+
+    function reiniciarJuego(){
+        location.reload()
+    }
+
     function aleatorio(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
