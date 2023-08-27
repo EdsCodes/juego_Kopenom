@@ -1,5 +1,5 @@
-./* NOTAS: En css hay varias formas de selectores:
-Selector de titulo. Ejemplo:
+/* NOTAS: En css hay varias formas de selectores:
+Selector de tipo. Ejemplo:
 h1 {
     color: blue
 }
@@ -24,6 +24,6 @@ CSS display:
 para entender a profundidad CSS flexbox: css-tricks.com
  */
 
-.titulo {
+#tittle {
     color:lightblue
 }
