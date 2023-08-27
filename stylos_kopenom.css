@@ -1,0 +1,44 @@
+/* NOTAS: En css hay varias formas de selectores:
+Selector de titulo. Ejemplo:
+h1 {
+    color: blue
+}
+Selector de clase. Ejemplo:
+.title {
+    color: blue
+}
+Selector de id. Ejemplo:
+#titulo {
+    color: red
+}
+/* las caracteristicas se refieren a el ancho, alto de los elementos y se codifican en ingles
+
+cssreference.io (recurso para conocer mas acerca de css)
+
+htmlcolorcodes.com/es/ - Colores para css
+
+CSS display:
+ in-line
+ block
+ in-line block
+para entender a profundidad CSS flexbox: css-tricks.com
+ */
+
+.titulo {
+    color:orangered;
+    width: 310px;
+    height: 50px;
+    
+}
+
+label {
+    color: white;
+}
+
+#seleccionar-mascota {
+    color: white;
+}
+
+html {
+    background-color: rgb(1, 1, 28);
+}
