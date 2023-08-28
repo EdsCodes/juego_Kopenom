@@ -25,10 +25,14 @@ para entender a profundidad CSS flexbox: css-tricks.com
  */
 
 .titulo {
-    color:orangered;
-    width: 310px;
+    color: orangered;
+    font-size: 70px;
     height: 50px;
-    
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: center;
+    margin-bottom: 30px;    
 }
 
 label {
@@ -37,6 +41,19 @@ label {
 
 #seleccionar-mascota {
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta-de-kopenom {
+    width: 100px;
+    height: 100px;
+    background: white; 
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items:center;
 }
 
 html {
