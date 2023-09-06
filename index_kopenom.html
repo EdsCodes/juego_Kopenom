@@ -7,22 +7,41 @@
         <link rel="stylesheet" href="./stylos_kopenom.css">
     </head>
     <body>
-        <h1 id="tittle" class="titulo">KOPENOM!</h1>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
         <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-        <i class="em em-ocean" aria-role="presentation" aria-label="WATER WAVE"></i>
-        <i class="em em-fire" aria-role="presentation" aria-label="FIRE"></i>
-        <i class="em em-deciduous_tree" aria-role="presentation" aria-label="DECIDUOUS TREE"></i>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Teko:wght@300&display=swap" rel="stylesheet">
+        
         <section id="seleccionar-mascota">
-            <h2>Elige tu mascota:</h2>
-
-            <label class="tarjeta-de-kopenom" for="Firekick">Firekick</label>
-            <input type="radio" name="mascota" id="Firekick"/>
-
-            <label class="tarjeta-de-kopenom" for="Waterhit">Waterhit</label>
-            <input type="radio" name="mascota" id="Waterhit"/>
             
-            <label class="tarjeta-de-kopenom" for="Earthpunch">Earthpunch</label>
-            <input type="radio" name="mascota" id="Earthpunch"/>
+            <h1 id="tittle" class="titulo">Kopenom!</h1>
+            
+            <div class="emojis">
+            <i class="em em-ocean" aria-role="presentation" aria-label="WATER WAVE"></i>
+            <i class="em em-fire" aria-role="presentation" aria-label="FIRE"></i>
+            <i class="em em-deciduous_tree" aria-role="presentation" aria-label="DECIDUOUS TREE"></i>
+            </div>
+            
+            <h2 class="subtitulo">Elige tu mascota:</h2>
+
+            <div class="tarjetas">
+                <label class="tarjeta-de-kopenom" for="Firekick">Firekick</label>
+                    <p>Firekick</p>
+                    <img src="./assets/trapinch.png" alt="Firekick">
+                <input type="radio" name="mascota" id="Firekick"/>
+
+                <label class="tarjeta-de-kopenom" for="Waterhit">Waterhit</label>
+                    <p>Waterhit</p>
+                    <img src="./assets/123.jpg" alt="Waterhit">
+                <input type="radio" name="mascota" id="Waterhit"/>
+            
+                <label class="tarjeta-de-kopenom" for="Earthpunch">Earthpunch</label>
+                    <p>Earthpunch</p>
+                    <img src="./assets/mascota.png" alt="Earthpunch">
+                <input type="radio" name="mascota" id="Earthpunch"/>
+            </div>
 
             <button id="boton-mascota">Seleccionar mascota</button>
         </section>
